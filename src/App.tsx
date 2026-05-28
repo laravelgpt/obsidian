@@ -677,7 +677,14 @@ export default function App() {
       ol: ({ children }: any) => <ol className="list-decimal pl-5 mb-4 space-y-1.5 text-[13px]">{children}</ol>,
       li: ({ children }: any) => <li className="mb-0.5">{children}</li>,
       code: ({ children }: any) => (
-        <code className="bg-opacity-10 rounded px-1.5 py-0.5 font-mono text-xs border" style={{ backgroundColor: theme.accent, borderColor: theme.border, color: theme.accent }}>
+        <code 
+          className="rounded px-1.5 py-0.5 font-mono text-xs border" 
+          style={{ 
+            backgroundColor: theme.accent.startsWith("#") ? theme.accent + "18" : "rgba(139, 92, 246, 0.1)", 
+            borderColor: theme.accent + "25", 
+            color: theme.accent 
+          }}
+        >
           {children}
         </code>
       ),
@@ -832,8 +839,8 @@ export default function App() {
             <span className="hidden md:inline">{isFullWidth ? "Compact" : "Full-W"}</span>
           </button>
 
-          <span className="text-[10px] opacity-40 ml-1 font-mono hidden lg:inline">
-            Press <code className="p-0.5 px-1 bg-neutral-800 rounded font-semibold text-white border border-neutral-700">Ctrl+E</code>
+          <span className="text-[10px] opacity-50 ml-1 font-mono hidden lg:inline">
+            Press <code className="p-0.5 px-1.5 rounded font-bold border" style={{ backgroundColor: theme.editorBg, borderColor: theme.border, color: theme.accent }}>Ctrl+E</code>
           </span>
         </div>
 
@@ -1904,7 +1911,7 @@ export default function App() {
                     🛠️ Double Bracket Backlinks
                   </h4>
                   <p className="leading-relaxed opacity-90 font-sans">
-                    Wrap any note name in double brackets like <code className="font-mono bg-neutral-900 px-1 py-0.5 rounded text-violet-300">[[Backlinking Guide]]</code> inside your note content. Click it in **Live Preview** to open, or create it if missing!
+                    Wrap any note name in double brackets like <code className="font-mono px-1.5 py-0.5 rounded border text-[11px]" style={{ backgroundColor: theme.editorBg, borderColor: theme.border, color: theme.accent }}>[[Backlinking Guide]]</code> inside your note content. Click it in **Live Preview** to open, or create it if missing!
                   </p>
                 </div>
 
@@ -1915,7 +1922,7 @@ export default function App() {
                   <p className="leading-relaxed opacity-90 font-sans">
                     Construct flowcharts on the fly inside the active note by adding arrows to double bullets:
                     <br />
-                    <code className="font-mono bg-neutral-900 block p-1.5 rounded text-[10px] leading-tight text-emerald-300 mt-1">
+                    <code className="font-mono block p-2 rounded text-[10px] leading-tight mt-1.5 border" style={{ backgroundColor: theme.editorBg, borderColor: theme.border, color: theme.accent }}>
                       - Setup Vault -{">"} Link Notes
                       <br />- Link Notes -{">"} Draw Graphs
                     </code>
@@ -1926,14 +1933,14 @@ export default function App() {
                   <h4 className="font-semibold font-mono text-[11px]" style={{ color: theme.text }}>
                     ⌨️ System Hotkeys
                   </h4>
-                  <div className="font-mono space-y-1 opacity-80 text-[11px]">
-                    <div className="flex justify-between">
+                  <div className="font-mono space-y-2 opacity-85 text-[11px]">
+                    <div className="flex justify-between items-center">
                       <span>Toggle Preview:</span>
-                      <span className="font-bold">Ctrl + E</span>
+                      <kbd className="px-1.5 py-0.5 rounded border text-[10px] font-bold" style={{ backgroundColor: theme.editorBg, borderColor: theme.border, color: theme.accent }}>Ctrl + E</kbd>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center">
                       <span>Create Daily Journal:</span>
-                      <span className="font-bold">Alt + Click Journal</span>
+                      <kbd className="px-1.5 py-0.5 rounded border text-[10px] font-bold" style={{ backgroundColor: theme.editorBg, borderColor: theme.border, color: theme.accent }}>Alt + Click Journal</kbd>
                     </div>
                   </div>
                 </div>

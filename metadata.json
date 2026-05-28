@@ -1,0 +1,6 @@
+{
+  "name": "Obsidian MD Editor",
+  "description": "A minimalist Markdown editor featuring live preview, robust backlinking, simulated plugins, visual diagramming, interactive graph visualization, and an AI-powered co-writer in the sidebar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
